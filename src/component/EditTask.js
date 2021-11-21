@@ -36,10 +36,10 @@ const EditTask = ({modal, toggle, updateTask, taskObj}) => {
         e.preventDefault();
         let tempObj = {}
         tempObj['ID'] = taskObj.ID
-        tempObj['Name'] = Name
+        tempObj['Name'] = taskObj.Name
         tempObj['IsCompleted'] = IsCompleted
         tempObj['Deadline'] = Deadline
-        if ((Name!==  taskObj.Name ||IsCompleted !== taskObj.IsCompleted || Deadline!==taskObj.Deadline) && Name!=="" && IsCompleted!=="" && Deadline!==""){
+        if ((IsCompleted !== taskObj.IsCompleted || Deadline!==taskObj.Deadline) && IsCompleted!=="" && Deadline!==""){
             updateTask(tempObj)
         }
         else {
@@ -51,10 +51,10 @@ const EditTask = ({modal, toggle, updateTask, taskObj}) => {
         <Modal isOpen={modal} toggle={toggle}>
             <ModalHeader toggle={toggle}>Update Task</ModalHeader>
             <ModalBody>
-                    <div className = "form-group">
+                    /*<div className = "form-group">
                         <label>Name</label>
                         <input type="text" className = "form-control" value = {Name} onChange = {handleChange} name = "Name"/>
-                    </div>
+                    </div>*/
                     <div className="form-group">
                         <label>Deadline</label>
                         <input type="date" className="form-control"  value={Deadline} onChange= {handleChange} name="Deadline"/>
